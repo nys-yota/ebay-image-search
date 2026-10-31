@@ -1,0 +1,30 @@
+[project]
+name = "ebay-image-search"
+version = "0.1.0"
+description = "Search marketplace listings by uploading a photo; candidates are re-ranked by CLIP image similarity."
+requires-python = ">=3.9"
+dependencies = [
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.29",
+    "python-multipart>=0.0.9",
+    "httpx>=0.27",
+    "pillow>=10",
+    "numpy>=1.26",
+    "torch>=2.2",
+    "open_clip_torch>=2.24",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-asyncio>=0.23"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

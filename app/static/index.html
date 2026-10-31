@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Search listings by image</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main>
+    <h1>Search listings by image</h1>
+    <form id="form">
+      <label id="drop" for="file">
+        <img id="preview" alt="" hidden>
+        <span id="drop-hint">Click, drop, or paste an image</span>
+        <input id="file" type="file" accept="image/*" hidden>
+      </label>
+      <div class="controls">
+        <input id="query" type="text" placeholder="Keywords (leave blank to auto-detect from the photo)">
+        <button id="go" type="submit" disabled>Search</button>
+      </div>
+      <div id="suggestions"></div>
+    </form>
+    <p id="status" role="status"></p>
+    <section id="results"></section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
